@@ -1,0 +1,27 @@
+{
+  "name": "alai",
+  "version": "1.0.0",
+  "description": "Application to create Alai presentations from webpages",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@mendable/firecrawl-js": "^1.22.0",
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
