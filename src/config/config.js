@@ -1,35 +1,31 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
+// Load environment variables with error handling
+// const result = dotenv.config();
+// if (result.error) {
+//   console.warn("Warning: .env file not found");
+//   throw new Error("Environment variables are required");
+// }
 
-module.exports = {
-  // Alai API Configuration
-  ALAI_API_BASE_URL: "https://alai-standalone-backend.getalai.com",
+// // Validate required environment variables
+// const requiredEnvVars = ["FIRECRAWL_API_KEY", "ALAI_EMAIL", "ALAI_PASSWORD"];
+// for (const envVar of requiredEnvVars) {
+//   if (!process.env[envVar]) {
+//     throw new Error(`Missing required environment variable: ${envVar}`);
+//   }
+// }
 
-  // Firecrawl API Configuration
-  FIRECRAWL_API_KEY: process.env.FIRECRAWL_API_KEY,
+export const config = {
+  // API Keys and Authentication
+  FIRECRAWL_API_KEY:
+    process.env.FIRECRAWL_API_KEY || "fc-9f257ebceac54c128adf66942a53cc1b",
+  ALAI_EMAIL: process.env.ALAI_EMAIL || "soumyo.tech.deep@gmail.com",
+  ALAI_PASSWORD: process.env.ALAI_PASSWORD || "tech@Password2002",
+  ALAI_API_KEY:
+    process.env.ALAI_API_KEY ||
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzY2hvdHRoamdsamJ4amVyY3puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxMTI0NzYsImV4cCI6MjAyNTY4ODQ3Nn0.3pZ7fQ9qWjBcX-oSLJ37P4D9ojrdTF1zdI1B4ONcxrE",
 
-  // API Endpoints
-  ENDPOINTS: {
-    AUTH: "/auth",
-    CREATE_SLIDE: "/create-new-slide",
-    CREATE_SLIDE_VARIANT: "/create-slide-variant-from-element-slide",
-    DELETE_SLIDE: "/delete-slides",
-    UPDATE_ELEMENTS: "/update-slide-entity",
-  },
-
-  // Default headers for API requests
-  DEFAULT_HEADERS: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-
-  // Authentication
-  ALAI_EMAIL: process.env.ALAI_EMAIL,
-  ALAI_PASSWORD: process.env.ALAI_PASSWORD,
-
-  // Application Settings
-  NODE_ENV: process.env.NODE_ENV || "development",
-  PORT: process.env.PORT || 3000,
-  API_TIMEOUT: parseInt(process.env.API_TIMEOUT) || 30000,
-  SCRAPE_TIMEOUT: parseInt(process.env.SCRAPE_TIMEOUT) || 60000,
-  DEBUG: process.env.DEBUG === "true",
+  // API URLs
+  ALAI_AUTH_URL: "https://api.getalai.com/auth/v1/token?grant_type=password",
+  ALAI_BASE_URL: "https://alai-standalone-backend.getalai.com",
 };
