@@ -13,13 +13,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@mendable/firecrawl-js": "^1.22.0",
     "axios": "^1.8.4",
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
